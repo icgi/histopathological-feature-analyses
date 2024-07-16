@@ -1,8 +1,10 @@
+import datetime
+
 import fire
 import numpy, pandas
 import cycler, textwrap, collections
 import scipy.cluster, sklearn.cluster
-import io, matplotlib, matplotlib.ticker, matplotlib.pyplot as plt, datetime
+import io, matplotlib, matplotlib.ticker, matplotlib.pyplot as plt
 
 
 class Runner:
@@ -39,13 +41,11 @@ class Runner:
     )
 
     class util:
-        """
-
-        """
+        """ """
 
         @staticmethod
-        def __get_output_timestamp(format_="%Y-%m-%d"):
-            """ Provides a normalized format timestamp for marking output files """
+        def get_output_timestamp(format_="%Y-%m-%d"):
+            """Provides a normalized format timestamp for marking output files"""
             return datetime.datetime.now().strftime(format_)
 
         @staticmethod
@@ -63,12 +63,10 @@ class Runner:
             return colors
 
         @staticmethod
-        def __plot_dendrogram(model, labels, **kwargs):
+        def plot_dendrogram(model, labels, **kwargs):
             """
-            Source:
+            source:
             https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_dendrogram.html
-
-            Modified to provide additional output.
 
             """
 
@@ -173,7 +171,7 @@ class Runner:
 
         subplots[0].set_xscale("log")  # ! do not move this
 
-        output, dendrogram_parameters, linkage_matrix = self.util.__plot_dendrogram(
+        output, dendrogram_parameters, linkage_matrix = self.util.plot_dendrogram(
             model,
             orientation="left",
             distance_sort=True,
@@ -354,19 +352,19 @@ class Runner:
 
         plt.savefig(
             "output___dendrogram_of_superclusters_with_score_boxplots___{}.svg".format(
-                Runner.util.__get_output_timestamp()
+                Runner.util.get_output_timestamp()
             ),
             format="svg",
         )
         plt.savefig(
             "output___dendrogram_of_superclusters_with_score_boxplots___{}.eps".format(
-                Runner.util.__get_output_timestamp()
+                Runner.util.get_output_timestamp()
             ),
             format="eps",
         )
         plt.savefig(
             "output___dendrogram_of_superclusters_with_score_boxplots___{}.png".format(
-                Runner.util.__get_output_timestamp()
+                Runner.util.get_output_timestamp()
             ),
             format="png",
         )
@@ -434,7 +432,7 @@ class Runner:
         #
         #   REPORT
         #
-        
+
         coi_with_dendrogram_cluster = pandas.merge(
             frames.loc["clusters_of_interest", resolution],
             dendrogram_frame,
