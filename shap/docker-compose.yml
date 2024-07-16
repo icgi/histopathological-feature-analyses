@@ -1,0 +1,12 @@
+version: '3'
+services:
+  shap:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: icgi.io/shap_analysis:v1.1
+    working_dir: /shap/
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/shap
