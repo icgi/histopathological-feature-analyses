@@ -501,7 +501,7 @@ class Runner:
             * `metric` = 'euclidean`
             * `linkage` = 'ward'
 
-        The annotation text for G0 ... G8 is only valid for this parameter set.
+        The annotation text for G0 ... G7 is only valid for this parameter set.
 
         This parameter set is applied whenever `compute_and_visualize_superclusters.py` is
         run with default parameters:
