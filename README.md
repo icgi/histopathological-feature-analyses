@@ -1,10 +1,9 @@
 # Histopathological feature analyses
 
 Analyses used to investigate associations between the DoMore-v1-CE-CRC marker and
-histopathological features for the study *"Novel clinical decision support system
-optimizing adjuvant chemotherapy for colon cancer by integrating deep learning-based
-pathology marker and circulating tumor DNA molecular residual disease: CIRCULATE-Japan
-GALAXY substudy".* See this manuscript, and especially the *Methods* section for
+histopathological features for the study *"Integration of AI-Based Pathological Risk
+Assessment and ctDNA Detection for Enhanced Risk Stratification in Resected Colon
+Cancer".* See this manuscript, and especially the *Methods* section for
 additional details.
 
 ## Create image tile features
