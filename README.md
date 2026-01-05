@@ -1,10 +1,7 @@
 # Histopathological feature analyses
 
-Analyses used to investigate associations between the DoMore-v1-CE-CRC marker and
-histopathological features for the study *"Integration of AI-Based Pathological Risk
-Assessment and ctDNA Detection for Enhanced Risk Stratification in Resected Colon
-Cancer".* See this manuscript, and especially the *Methods* section for
-additional details.
+Analyses used to investigate associations between DoMore markers and
+histopathological features.
 
 ## Create image tile features
 
@@ -45,7 +42,7 @@ utils/classify_tile_features.py
 
 ## Clustering result analyses
 
-Collect DoMore-v1-CE-CRC tile scores and merge them with corresponding tile feature
+Collect DoMore tile scores and merge them with corresponding tile feature
 clusters with
 ```
 clustering/analyses/associate_clusters_with_histotyping.py
@@ -58,7 +55,7 @@ clustering/analyses/
 ## Shapley analysis
 
 For each whole slide image, we define a feature as the percentage of tiles for each
-cluster and associate this with the DoMore-v1-CE-CRC score for the respective
+cluster and associate this with the DoMore score for the respective
 whole slide image. To perform Shapley analysis, use scripts in
 ```
 shap/

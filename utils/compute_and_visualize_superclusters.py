@@ -122,8 +122,8 @@ class Runner:
         """
 
         Groups original clusters into `n_clusters` superclusters using sklearn.cluster.AgglomerativeClustering.
-        Adds tile median of `DoMore-v1-CE-CRC` for the selected `resolution` as an additional input feature.
-        This `DoMore-v1-CE-CRC` feature is weighted by `histotyping_score_weight` (default for 10x is 109)
+        Adds tile median of `DoMore model` score for the selected `resolution` as an additional input feature.
+        This `DoMore model` feature is weighted by `histotyping_score_weight` (default for 10x is 109)
 
         """
 
@@ -140,7 +140,7 @@ class Runner:
             "histotyping_score_median"
         ].to_dict()
 
-        # adds `DoMore-v1-CE-CRC score` as an additional weighted feature
+        # adds `DoMore model score` as an additional weighted feature
         data[1024] = [
             cluster_to_histotyping_score.get(i) * histotyping_score_weight
             for i in range(0, 100)
@@ -257,7 +257,7 @@ class Runner:
         subplots[1].tick_params(axis="y", which="both", length=0)
         subplots[1].set_xlim(0, 1)
         subplots[1].axvline(0.5, color="black", linestyle="dashed", linewidth=1)
-        subplots[1].set_xlabel("DoMore-v1-CE-CRC\n10× score")
+        subplots[1].set_xlabel("DoMore\n10× score")
 
         #
         #   APPLY LABEL COLORING
